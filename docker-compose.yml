@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  web_vulnerable:
+    build:
+      context: . # metto che il Dockerfile è in current dir
+      dockerfile: Dockerfile #gli dico il nome
+    ports:
+      - "8080:80" # uso porta 8080
+    volumes:
+      # Monto la dir 'public' locale nel root del server.
+      - ./public:/var/www/html
+    container_name: basta_che_funziona
+    restart: unless-stopped
