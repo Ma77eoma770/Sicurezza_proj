@@ -1,4 +1,13 @@
 <?php
+
+// SIMULAZIONE COOKIE
+session_start();
+if (!isset($_COOKIE['session_token'])) {
+    setcookie('session_token', 'cluelessLeonardo', time() + 3600);
+}
+
+
+//-------------------------------------------------------------
 $file_commenti = '/var/www/htmltxt/commenti.txt';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
