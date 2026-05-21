@@ -1,0 +1,12 @@
+Aprire http://localhost:8080/header_xss/index.php nel browser
+Utilizzando un'estensione del browser per modificare gli header, modifichiamo il nostro 'User-Agent' con un payload malevolo, ad esempio: <script>alert('Vulnerabilità XSS!')</script>
+Appare il popup di alert sul browser
+Il codice JavaScript è stato interpretato ed eseguito dal browser. 
+
+Aprire header_secure.php
+Inviare lo stesso identico payload di prima (<script>alert('Vulnerabilità XSS!')</script>) modificando l'header User-Agent.
+Il payload viene invece stampato come semplice testo sulla pagina.
+
+La difesa si basa sulla sanificazione dell'input. Prima di stampare il 
+valore dell'header, utilizziamo la funzione PHP htmlspecialchars(). 
+Questa funzione converte i caratteri speciali dell'HTML (come le parentesi angolari < e >) nelle loro entità corrispondenti (&lt; e &gt;). In questo modo il browser non li interpreta più come tag eseguibili, neutralizzando del tutto l'attacco in questo contesto.
