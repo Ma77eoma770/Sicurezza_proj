@@ -2,7 +2,7 @@
 
 
 //-------------------------------------------------------------
-$file_commenti = '/var/www/htmltxt/commenti.txt';
+$file_commenti = '/var/www/htmltxt/commenti_sicuri.txt';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // TO DO: Magari una volta finito il tutto i commenti li elimino, e spiego nella relazione
@@ -16,12 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $nome_sicuro = htmlspecialchars($nome, ENT_QUOTES, 'UTF-8');
         //sanifico il nome ma non il commento
+        $commento_sicuro = htmlspecialchars($commento, ENT_QUOTES, 'UTF-8');
 
-        $record = "<div class='comment'><strong>" . $nome_sicuro . "</strong><br>" . $commento . "</div>\n";
+        $record = "<div class='comment'><strong>" . $nome_sicuro . "</strong><br>" . $commento_sicuro . "</div>\n";
         file_put_contents($file_commenti, $record, FILE_APPEND);
 
         // dice al browser di tornare alla pagina principale
-        header("Location: index.php");
+        header("Location: index_secure.php");
         exit;
     }
 
@@ -56,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <!-- form commenti -->
   <div class="comment-section">
     <h3>Lascia un commento</h3>
-    <form action="index.php" method="POST">
+    <form action="index_secure.php" method="POST">
 
       <label for="username">Nome:</label><br>
       <input type="text" id="username" name="username" required><br><br>
