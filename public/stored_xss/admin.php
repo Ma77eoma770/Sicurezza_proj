@@ -1,5 +1,4 @@
 <?php
-// admin.php: Finta pagina di Amministrazione
 $file_commenti = '/var/www/htmltxt/commenti.txt';
 ?>
 <!DOCTYPE html>
@@ -31,7 +30,7 @@ $file_commenti = '/var/www/htmltxt/commenti.txt';
   </div>
 
 
-   <!-- Disastro, why would he do that????? -->
+   <!-- credo irrealistico ma è solo un esempio quindi è fine ig-->
   <h2>Ultimi commenti in attesa di moderazione:</h2>
   <div>
      <?php

@@ -15,9 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($nome) && !empty($commento)) {
 
         $nome_sicuro = htmlspecialchars($nome, ENT_QUOTES, 'UTF-8');
-        //sanifico il nome ma non il commento
+        //sanifico anche il commento
         $commento_sicuro = htmlspecialchars($commento, ENT_QUOTES, 'UTF-8');
-
+        // ora posso salvare tranquillamente
         $record = "<div class='comment'><strong>" . $nome_sicuro . "</strong><br>" . $commento_sicuro . "</div>\n";
         file_put_contents($file_commenti, $record, FILE_APPEND);
 

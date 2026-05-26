@@ -15,12 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($nome) && !empty($commento)) {
 
         $nome_sicuro = htmlspecialchars($nome, ENT_QUOTES, 'UTF-8');
+        
         //sanifico il nome ma non il commento
-
         $record = "<div class='comment'><strong>" . $nome_sicuro . "</strong><br>" . $commento . "</div>\n";
         file_put_contents($file_commenti, $record, FILE_APPEND);
 
-        // dice al browser di tornare alla pagina principale
         header("Location: index.php");
         exit;
     }

