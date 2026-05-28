@@ -1,8 +1,6 @@
 <?php
-// Avvia la sessione se necessario per altri scopi
-session_start();
 
-// Vulnerabilità mitigata: Estrazione dell'header User-Agent CON sanificazione
+// Estrazione dell'header User-Agent con sanificazione
 $userAgent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'Nessun User-Agent fornito';
 // Sanificazione tramite htmlspecialchars
 $userAgentSicuro = htmlspecialchars($userAgent, ENT_QUOTES, 'UTF-8');
